@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Head from 'next/head'
 import Nav from '../components/nav'
 import Link from 'next/link'
@@ -15,7 +15,10 @@ const Detail = ({ pokemon }) => (
       <center>
         <h2>{pokemon.name}</h2>
         {pokemon.sprites ? (
-          <img src={pokemon.sprites.front_default} alt="front sprite" />
+          <Fragment>
+            <img src={pokemon.sprites.front_default} alt="front sprite" />
+            <img src={pokemon.sprites.back_default} alt="back sprite" />
+          </Fragment>
         ) : null}
       </center>
       <Link href={`/`}>
